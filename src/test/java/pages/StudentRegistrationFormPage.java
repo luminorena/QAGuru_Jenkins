@@ -16,6 +16,7 @@ public class StudentRegistrationFormPage{
     // Components
     private final CalendarComponent calendarComponent = new CalendarComponent();
     private final ModalWindowComponent modalWindowComponent = new ModalWindowComponent();
+
     // Elements
     private final SelenideElement
              firstNameInput = $("#firstName")
@@ -31,6 +32,7 @@ public class StudentRegistrationFormPage{
             ,cityComboBox = $("#city")
             ,submitButton =$("#submit")
             ,closeModalButton =  $("#closeLargeModal");
+
 
     // Actions
     public StudentRegistrationFormPage openPage(){
@@ -104,6 +106,7 @@ public class StudentRegistrationFormPage{
         cityComboBox.$(byText(city)).click();
         return this;
     }
+
 
     public StudentRegistrationFormPage clickSubmit () {
         submitButton.scrollTo().click();

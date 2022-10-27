@@ -10,11 +10,12 @@ import pages.StudentRegistrationFormPage;
 import static helpers.TestData.*;
 
 
-public class StudentRegistrationFormTests  {
+public class StudentRegistrationFormTests {
 
     StudentRegistrationFormPage studentRegistrationFormPage
             = new StudentRegistrationFormPage();
     TestData testData = new TestData();
+
 
     @BeforeAll
     static void setUp() {

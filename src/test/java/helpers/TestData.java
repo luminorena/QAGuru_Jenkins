@@ -5,21 +5,21 @@ import com.github.javafaker.Faker;
 import java.util.Random;
 
 public class TestData {
-    public static  Faker faker = new Faker();
-    public static String firstName = faker.name().firstName();
-    public static String lastName = faker.name().lastName();
-    public static String email = faker.internet().emailAddress();
-    public static String gender = faker.demographic().sex();
-    public static String phone = faker.phoneNumber().subscriberNumber(10);
-    public static String year = String.valueOf(faker.date().birthday().getYear() + 1900);
-    public static String month = String.valueOf(faker.date().birthday().getDate());
-    public static String day = getMonthName(faker.date().birthday().getMonth());
-    public static String subject = getSubject();
-    public static String hobbies = getHobbies();
-    public static String filePath = "11.png";
-    public static String currentAddress = faker.address().fullAddress();
-    public static String state = getState();
-    public static String city = getCity();
+    static Faker faker = new Faker();
+     String firstName = faker.name().firstName();
+     String lastName = faker.name().lastName();
+     String email = faker.internet().emailAddress();
+     String gender = faker.demographic().sex();
+     String phone = faker.phoneNumber().subscriberNumber(10);
+     String year = String.valueOf(faker.date().birthday().getYear() + 1900);
+     String month = String.valueOf(faker.date().birthday().getDate());
+     String day = getMonthName(faker.date().birthday().getMonth());
+     String subject = getSubject();
+     String hobbies = getHobbies();
+     String filePath = "11.png";
+     String currentAddress = faker.address().fullAddress();
+     static String state = getState();
+     String city = getCity();
 
 
     public static String getMonthName(int month) {
@@ -64,7 +64,6 @@ public class TestData {
         String[] hobbiesArray = {"Sports", "Reading", "Music"};
         return hobbiesArray[new Random().nextInt(hobbiesArray.length)];
     }
-
 
 
     public static String getState() {
