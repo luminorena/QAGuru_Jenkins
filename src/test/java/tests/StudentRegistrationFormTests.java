@@ -1,15 +1,20 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import helpers.TestData;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationFormPage;
 
 
-public class StudentRegistrationFormTests extends TestBase {
+import static helpers.TestData.*;
+
+
+public class StudentRegistrationFormTests  {
 
     StudentRegistrationFormPage studentRegistrationFormPage
             = new StudentRegistrationFormPage();
+    TestData testData = new TestData();
 
     @BeforeAll
     static void setUp() {
@@ -20,6 +25,7 @@ public class StudentRegistrationFormTests extends TestBase {
 
     @Test
     void doRegisterFillForm() throws InterruptedException {
+
         studentRegistrationFormPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
