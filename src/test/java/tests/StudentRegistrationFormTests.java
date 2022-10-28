@@ -14,7 +14,7 @@ public class StudentRegistrationFormTests {
 
     StudentRegistrationFormPage studentRegistrationFormPage
             = new StudentRegistrationFormPage();
-    TestData testData = new TestData();
+
 
 
     @BeforeAll
