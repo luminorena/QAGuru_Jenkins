@@ -1,8 +1,8 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
-import helpers.TestData;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -41,8 +41,8 @@ public class StudentRegistrationFormTests {
     }
 
 
-
     @Test
+    @DisplayName("full form test")
     void doRegisterFillForm() throws InterruptedException {
 
         studentRegistrationFormPage.openPage()
@@ -76,7 +76,9 @@ public class StudentRegistrationFormTests {
                 .closeModalWindow();
     }
 
+
     @Test
+    @DisplayName("Short form test")
     void doRegisterWithMinimumDataForm() throws InterruptedException {
         studentRegistrationFormPage.openPage()
                 .setFirstName(firstName)
