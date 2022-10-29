@@ -23,7 +23,7 @@ public class StudentRegistrationFormTests {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.remote=System
-                .getProperty("http://user1:1234@selenoid.autotests.cloud:4444/wd/hub");
+                .getProperty("selenide.remote");
     }
 
     @Test
