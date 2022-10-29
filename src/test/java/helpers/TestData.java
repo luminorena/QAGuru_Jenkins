@@ -12,8 +12,8 @@ public class TestData {
     public static String gender = faker.demographic().sex();
     public static String phone = faker.phoneNumber().subscriberNumber(10);
     public static String year = String.valueOf(faker.date().birthday().getYear() + 1900);
-    public static String month = String.valueOf(faker.date().birthday().getDate());
-    public static String day = getMonthName(faker.date().birthday().getMonth());
+    public static String month = getMonthName(faker.date().birthday().getMonth());
+    public static String day = String.valueOf(faker.date().birthday().getDate());
     public static String subject = getSubject();
     public static String hobbies = getHobbies();
     public static String filePath = "11.png";
@@ -50,7 +50,7 @@ public class TestData {
                 return "December";
 
         }
-        return String.valueOf(month);
+        return null;
     }
 
     public static String getSubject() {
