@@ -4,8 +4,12 @@ import com.codeborne.selenide.Configuration;
 import helpers.TestData;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.MutableCapabilities;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.StudentRegistrationFormPage;
 
+
+import java.util.Map;
 
 import static helpers.TestData.*;
 
@@ -24,7 +28,19 @@ public class StudentRegistrationFormTests {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.remote=System
                 .getProperty("selenide.remote");
+        Configuration.browserCapabilities = getRemoteDriver();
     }
+
+    private static MutableCapabilities getRemoteDriver(){
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "chrome");
+        capabilities.setCapability("browserVersion", "107");
+        capabilities.setCapability("selenoid:options",
+                Map.of("enableVNC", true, "enableVideo", true));
+        return capabilities;
+    }
+
+
 
     @Test
     void doRegisterFillForm() throws InterruptedException {
