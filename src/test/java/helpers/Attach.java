@@ -42,10 +42,8 @@ public class Attach {
                 + "' type='video/mp4'></video></body></html>";
     }
 
-
     public static URL getVideoUrl() {
-        String videoUrl = "https://selenoid.autotests.cloud/video/"
-                + getSessionId() + ".mp4";
+        String videoUrl = "https://selenoid.autotests.cloud/video/" + getSessionId() + ".mp4";
 
         try {
             return new URL(videoUrl);
@@ -55,8 +53,8 @@ public class Attach {
         return null;
     }
 
-
-    private static String getSessionId() {
+    public static String getSessionId(){
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
+
 }
