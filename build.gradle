@@ -27,8 +27,6 @@ repositories {
     mavenCentral()
 }
 
-def slf4jVersion = "1.7.32"
-
 
 compileJava {
     options.encoding='UTF-8'
@@ -49,7 +47,6 @@ dependencies {
             "com.opencsv:opencsv:5.7.1",
             "com.fasterxml.jackson.core:jackson-databind:2.13.4.2",
             "io.qameta.allure:allure-selenide:2.19.0",
-            "org.slf4j:slf4j-simple:$slf4jVersion"
     )
 
 }
