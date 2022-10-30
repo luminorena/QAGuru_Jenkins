@@ -26,19 +26,18 @@ public class StudentRegistrationFormTests {
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.remote=System
-                .getProperty("selenide.remote");
-        Configuration.browserCapabilities = getRemoteDriver();
+        Configuration.remote="https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        //Configuration.browserCapabilities = getRemoteDriver();
     }
 
-    private static MutableCapabilities getRemoteDriver(){
+    /*private static MutableCapabilities getRemoteDriver(){
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
         capabilities.setCapability("browserVersion", "107");
         capabilities.setCapability("selenoid:options",
                 Map.of("enableVNC", true, "enableVideo", true));
         return capabilities;
-    }
+    }*/
 
 
     @Test
