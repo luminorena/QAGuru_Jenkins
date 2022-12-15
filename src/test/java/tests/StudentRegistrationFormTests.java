@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import helpers.TestBase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,13 +11,15 @@ import static helpers.TestData.*;
 
 public class StudentRegistrationFormTests extends TestBase {
 
+
     StudentRegistrationFormPage studentRegistrationFormPage
             = new StudentRegistrationFormPage();
+
+
 
     @Test
     @DisplayName("full form test")
     void doRegisterFillForm() throws InterruptedException {
-
         studentRegistrationFormPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)

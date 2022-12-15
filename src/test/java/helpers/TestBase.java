@@ -9,24 +9,27 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
+
 public class TestBase {
     @BeforeAll
     static void setUp() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        SelenideLogger.addListener("allure", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("browserVersion", "100.0");
-        capabilities.setCapability("selenoid:options",
-                Map.of("enableVNC", true, "enableVideo", true));
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+
         Configuration.browserCapabilities = capabilities;
-        Configuration.holdBrowserOpen = true;
-        Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "100");
+        Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
 
-    }
+        if (!System.getProperty("remote_url").equals("")) {
+            Configuration.remote = System.getProperty("remote_url");
+        }
 
+        }
 
     @AfterEach
     void addAttachments() {
