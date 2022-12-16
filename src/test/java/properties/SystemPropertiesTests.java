@@ -8,9 +8,10 @@ public class SystemPropertiesTests {
     @Tag("systemPropertiesTest")
     void systemPropertyTest(){
         System.getProperty("browser", "firefox");
-        System.getProperty("browser_version", "105");
-        System.getProperty("browser_size", "1920x1080");
-        System.getProperty("remote_url"
+        System.getProperty("browserVersion", "105");
+        System.getProperty("windowSize", "1920x1080");
+        System.getProperty("remoteURL"
                 , "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+
     }
 }
