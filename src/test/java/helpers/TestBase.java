@@ -12,13 +12,12 @@ public class TestBase {
     @BeforeAll
     static void setUp() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-
-        Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         Configuration.browserCapabilities = capabilities;
+        Configuration.baseUrl = "https://demoqa.com";
 
         if (!System.getProperty("remoteURL").equals("")) {
             Configuration.remote = System.getProperty("remoteURL");
