@@ -15,11 +15,6 @@ public class TestBase {
     static void setUp() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-
-        Configuration.browserCapabilities = capabilities;
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
@@ -27,6 +22,10 @@ public class TestBase {
 
         if (!System.getProperty("remoteURL").equals("")) {
             Configuration.remote = System.getProperty("remoteURL");
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.browserCapabilities = capabilities;
         }
 
         }
